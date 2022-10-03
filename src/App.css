@@ -93,7 +93,7 @@ li > img {
   grid-row-start: 1;
   grid-row-end: 2;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
   position: relative;
 }
 .accordion-title {
@@ -132,7 +132,7 @@ li > img {
   grid-template-columns: 40px 1fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   border: 1px solid #e5e6ee;
-  border-radius: 3%;
+  border-radius: 5px 5px 5px 5px;
   margin: 25px;
   width: 370px;
   height: 450px;
@@ -144,12 +144,12 @@ li > img {
   grid-row-end: span 4;
   grid-column-start: 1;
   grid-column-end: 2;
-
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   align-content: center;
+  border-radius: 5px 0 0 5px;
 }
 .card-text {
   grid-row-start: 2;

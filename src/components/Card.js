@@ -8,6 +8,11 @@ import faLikesIcon from "../imgs/statsIcon/falikes.png";
 import faCommentsIcon from "../imgs/statsIcon/facomments.png";
 import faSharesIcon from "../imgs/statsIcon/fashares.png";
 import faViewsIcon from "../imgs/statsIcon/faviews.png";
+import twHeartIcon from "../imgs/statsIcon/twheart.png";
+import twSharesIcon from "../imgs/statsIcon/twshares.png";
+import faLogoIcon from "../imgs/socialmediaIcon/Facebook-logo.png";
+import twLogoIcon from "../imgs/socialmediaIcon/Twitter-logo.png";
+import insLogoIcon from "../imgs/socialmediaIcon/Instagram-logo.png";
 
 const Card = (dataFromJson) => {
   const dataParsed = jsonData["posts_by_date"];
@@ -24,11 +29,41 @@ const Card = (dataFromJson) => {
                 return (
                   <>
                     <div className="card">
-                      <div className="status-line">
-                        <p>{dataParsed[element][item].status}</p>
+                      <div
+                        className="status-line"
+                        style={{
+                          backgroundColor:
+                            dataParsed[element][item].status === 0
+                              ? "#F7BF38"
+                              : dataParsed[element][item].status === 1
+                              ? "#3AC183"
+                              : dataParsed[element][item].status === 2
+                              ? "#67B1F2"
+                              : dataParsed[element][item].status === 3
+                              ? "#ACACAC"
+                              : dataParsed[element][item].status === 4
+                              ? "#FB6450"
+                              : "#67B1F2",
+                        }}
+                      >
+                        <img
+                          src={
+                            dataParsed[element][item]["account"].channel ===
+                            "twitter"
+                              ? twLogoIcon
+                              : dataParsed[element][item]["account"].channel ===
+                                "facebook"
+                              ? faLogoIcon
+                              : insLogoIcon
+                          }
+                        ></img>
                       </div>
                       <div className="card-time">
-                        <p>{dataParsed[element][item].published_at}</p>
+                        <p>
+                          {dataParsed[element][item].is_published === true
+                            ? dataParsed[element][item].published_at
+                            : dataParsed[element][item].updated_at}
+                        </p>
                       </div>
                       <div className="card-text">
                         <p>{dataParsed[element][item]["entry"].message}</p>
@@ -43,11 +78,32 @@ const Card = (dataFromJson) => {
                         ></img>
                       </div>
                       <div className="card-stats">
-                        <img src={faLikesIcon}></img>
+                        <img
+                          src={
+                            dataParsed[element][item]["account"].channel ===
+                            "twitter"
+                              ? twHeartIcon
+                              : faLikesIcon
+                          }
+                        ></img>
                         <p className="stat-count">123</p>
-                        <img src={faCommentsIcon}></img>
+                        <img
+                          src={
+                            dataParsed[element][item]["account"].channel ===
+                            "twitter"
+                              ? twSharesIcon
+                              : faCommentsIcon
+                          }
+                        ></img>
                         <p className="stat-count">123</p>
-                        <img src={faSharesIcon}></img>
+                        <img
+                          src={
+                            dataParsed[element][item]["account"].channel ===
+                            "twitter"
+                              ? faCommentsIcon
+                              : faSharesIcon
+                          }
+                        ></img>
                         <p className="stat-count">123</p>
                         <img src={faViewsIcon}></img>
                         <p className="stat-count">123</p>

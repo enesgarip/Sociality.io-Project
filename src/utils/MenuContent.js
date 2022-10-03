@@ -1,8 +1,8 @@
-import icon2 from "../imgs/icon/Icon2.ico";
-import icon3 from "../imgs/icon/Icon3.ico";
-import icon4 from "../imgs/icon/Icon4.ico";
-import icon5 from "../imgs/icon/Icon5.ico";
-import icon6 from "../imgs/icon/Icon6.ico";
+import icon2 from "../imgs/menuIcon/Icon2.ico";
+import icon3 from "../imgs/menuIcon/Icon3.ico";
+import icon4 from "../imgs/menuIcon/Icon4.ico";
+import icon5 from "../imgs/menuIcon/Icon5.ico";
+import icon6 from "../imgs/menuIcon/Icon6.ico";
 
 export const accordionData = [
   {

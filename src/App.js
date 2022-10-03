@@ -11,7 +11,7 @@ import StatusBar from "./imgs/Descriptions.png";
 import Profile from "./imgs/Profile.png";
 import Accordion from "./components/Accordion";
 import { accordionData } from "./utils/MenuContent";
-import notIcon from "./imgs/icon/Icon1.ico";
+import notIcon from "./imgs/menuIcon/Icon1.ico";
 import Card from "./components/Card";
 import data from "./utils/data.json";
 
