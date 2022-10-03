@@ -10,7 +10,7 @@ import faSharesIcon from "../imgs/statsIcon/fashares.png";
 import faViewsIcon from "../imgs/statsIcon/faviews.png";
 
 const Card = (dataFromJson) => {
-  const hebele = jsonData["posts_by_date"];
+  const dataParsed = jsonData["posts_by_date"];
   const dates = Object.keys(jsonData["posts_by_date"]);
   console.log(dates);
   return (
@@ -20,22 +20,22 @@ const Card = (dataFromJson) => {
           <>
             <div className="date-title">{element}</div>
             <div className="content-container">
-              {Object.keys(hebele[element]).map((item, uid) => {
+              {Object.keys(dataParsed[element]).map((item, uid) => {
                 return (
                   <>
                     <div className="card">
                       <div className="status-line">
-                        <p>{hebele[element][item].status}</p>
+                        <p>{dataParsed[element][item].status}</p>
                       </div>
                       <div className="card-time">
-                        <p>{hebele[element][item].published_at}</p>
+                        <p>{dataParsed[element][item].published_at}</p>
                       </div>
                       <div className="card-text">
-                        <p>{hebele[element][item]["entry"].message}</p>
+                        <p>{dataParsed[element][item]["entry"].message}</p>
                       </div>
                       <div className="card-photo">
                         <img
-                          src={hebele[element][item]["entry"].image[0]}
+                          src={dataParsed[element][item]["entry"].image[0]}
                           onError={({ currentTarget }) => {
                             currentTarget.onerror = null;
                             currentTarget.src = noPostImg;

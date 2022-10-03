@@ -193,17 +193,15 @@ li > img {
   justify-content: space-evenly;
 }
 .card-actions {
-  display: flex;
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 3;
   grid-column-end: 4;
-  flex-direction: row;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   align-items: center;
-  height: 50px;
+  align-content: center;
 }
 .card-actions > img {
   width: 20px;
@@ -228,6 +226,12 @@ li > img {
   color: #acacac;
   font-weight: 500;
   font-size: 0.875em;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin-left: 10px;
 }
 .stat-count {
   font-family: "Raleway", sans-serif;
