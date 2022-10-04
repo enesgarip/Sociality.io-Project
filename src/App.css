@@ -251,7 +251,8 @@ li > img {
 .card-time {
   font-family: "Raleway", sans-serif;
   color: #acacac;
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-weight: bold;
   font-size: 0.875em;
   display: flex;
   flex-wrap: nowrap;

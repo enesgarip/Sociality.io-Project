@@ -14,17 +14,46 @@ import faLogoIcon from "../imgs/socialmediaIcon/Facebook-logo.png";
 import twLogoIcon from "../imgs/socialmediaIcon/Twitter-logo.png";
 import insLogoIcon from "../imgs/socialmediaIcon/Instagram-logo.png";
 
-const Card = (dataFromJson) => {
+const Card = () => {
   const dataParsed = jsonData["posts_by_date"];
   var dates = Object.keys(jsonData["posts_by_date"]);
   var sortedDates = dates.sort((a, b) => b.localeCompare(a));
+
+  function formatDate(newDate, isCardTime) {
+    const months = {
+      0: "January",
+      1: "February",
+      2: "March",
+      3: "April",
+      4: "May",
+      5: "June",
+      6: "July",
+      7: "August",
+      8: "September",
+      9: "October",
+      10: "November",
+      11: "December",
+    };
+
+    const d = new Date(newDate);
+    const year = d.getFullYear();
+    const date = d.getDate();
+    const hour = d.getHours();
+    const minute = d.getMinutes();
+    const monthName = months[d.getMonth()];
+    const formatted = `${date} ${monthName} ${year}`;
+    if (isCardTime) {
+      return `${date} ${monthName} ${year} - ${hour}:${minute}`.toString();
+    }
+    return formatted.toString();
+  }
 
   return (
     <>
       {sortedDates.map((element) => {
         return (
           <>
-            <div className="date-title">{element}</div>
+            <div className="date-title">{formatDate(element, false)}</div>
             <div className="content-container">
               {Object.keys(dataParsed[element]).map((item) => {
                 return (
@@ -62,9 +91,10 @@ const Card = (dataFromJson) => {
                       </div>
                       <div className="card-time">
                         <p>
-                          {dataParsed[element][item].is_published === true
-                            ? dataParsed[element][item].published_at
-                            : dataParsed[element][item].updated_at}
+                          {formatDate(
+                            dataParsed[element][item].published_at,
+                            true
+                          )}
                         </p>
                       </div>
                       <div className="card-text">
@@ -77,7 +107,7 @@ const Card = (dataFromJson) => {
                             currentTarget.onerror = null;
                             currentTarget.src = noPostImg;
                           }}
-                          alt="Card Image"
+                          alt="Card"
                         ></img>
                       </div>
                       <div className="card-stats">
