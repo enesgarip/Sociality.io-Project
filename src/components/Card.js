@@ -16,16 +16,17 @@ import insLogoIcon from "../imgs/socialmediaIcon/Instagram-logo.png";
 
 const Card = (dataFromJson) => {
   const dataParsed = jsonData["posts_by_date"];
-  const dates = Object.keys(jsonData["posts_by_date"]);
-  console.log(dates);
+  var dates = Object.keys(jsonData["posts_by_date"]);
+  var sortedDates = dates.sort((a, b) => b.localeCompare(a));
+
   return (
     <>
-      {dates.map((element) => {
+      {sortedDates.map((element) => {
         return (
           <>
             <div className="date-title">{element}</div>
             <div className="content-container">
-              {Object.keys(dataParsed[element]).map((item, uid) => {
+              {Object.keys(dataParsed[element]).map((item) => {
                 return (
                   <>
                     <div className="card">

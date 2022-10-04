@@ -64,9 +64,7 @@ function App() {
           ))
         )}
       </div>
-      <div className="content">
-        {React.Children.toArray(<Card data={dataJSON}></Card>)}
-      </div>
+      <div className="content">{React.Children.toArray(<Card></Card>)}</div>
     </div>
   );
 }
