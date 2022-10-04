@@ -47,6 +47,13 @@ body {
   grid-row-end: 3;
   background-color: #393d42;
   font-family: "Barlow Semi Condensed", sans-serif;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.accordionMenu::-webkit-scrollbar {
+  display: none;
 }
 .content {
   width: fit-content;
@@ -99,7 +106,7 @@ li > img {
 .accordion-title {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   padding: 5%;
   align-items: center;
@@ -112,17 +119,37 @@ li > img {
   align-items: center;
   color: #fffdfd;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 .active,
 .accordion-item:hover {
   background-color: #f55661;
 }
+.menu-list-item {
+  list-style: none;
+  color: #babbbd;
+}
+.menu-list-item::before {
+  content: "\2022";
+  color: #babbbd;
+  font-weight: bold;
+  margin-right: 50%;
+  margin-left: 20%;
+}
+.active .menu-list-item::before {
+  content: "\2022";
+  color: #f55661;
+  font-weight: bold;
+  margin-right: 50%;
+  margin-left: 20%;
+}
 
 .plus-sign {
-  margin: 5%;
+  margin: 10%;
   color: #1d1d1d;
   font-size: xx-large;
 }
+
 .icon {
   margin-right: 0.5vw;
 }

@@ -57,6 +57,7 @@ const Card = (dataFromJson) => {
                               ? faLogoIcon
                               : insLogoIcon
                           }
+                          alt="Social Media Icon"
                         ></img>
                       </div>
                       <div className="card-time">
@@ -76,6 +77,7 @@ const Card = (dataFromJson) => {
                             currentTarget.onerror = null;
                             currentTarget.src = noPostImg;
                           }}
+                          alt="Card Image"
                         ></img>
                       </div>
                       <div className="card-stats">
@@ -86,6 +88,7 @@ const Card = (dataFromJson) => {
                               ? twHeartIcon
                               : faLikesIcon
                           }
+                          alt="Statistics Icon"
                         ></img>
                         <p className="stat-count">123</p>
                         <img
@@ -95,6 +98,7 @@ const Card = (dataFromJson) => {
                               ? twSharesIcon
                               : faCommentsIcon
                           }
+                          alt="Statistics Icon"
                         ></img>
                         <p className="stat-count">123</p>
                         <img
@@ -104,15 +108,16 @@ const Card = (dataFromJson) => {
                               ? faCommentsIcon
                               : faSharesIcon
                           }
+                          alt="Statistics Icon"
                         ></img>
                         <p className="stat-count">123</p>
-                        <img src={faViewsIcon}></img>
+                        <img src={faViewsIcon} alt="Statistics Icon"></img>
                         <p className="stat-count">123</p>
                       </div>
                       <div className="card-actions">
-                        <img src={cancelIcon}></img>
-                        <img src={deleteIcon}></img>
-                        <img src={optionsIcon}></img>
+                        <img src={cancelIcon} alt="Actions Icon"></img>
+                        <img src={deleteIcon} alt="Actions Icon"></img>
+                        <img src={optionsIcon} alt="Actions Icon"></img>
                       </div>
                     </div>
                   </>

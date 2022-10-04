@@ -8,26 +8,26 @@ export const accordionData = [
   {
     icon: icon2,
     title: "SUMMARY",
-    content: `Lorem ipsum dolor, sit amet`,
+    content: `Compose, Feed`,
   },
   {
     icon: icon3,
     title: "PUBLISH",
-    content: `Lorem ipsum dolor, sit amet`,
+    content: `Compose, Feed`,
   },
   {
     icon: icon4,
     title: "ENGAGE",
-    content: `Lorem ipsum dolor, sit amet`,
+    content: `Compose, Feed`,
   },
   {
     icon: icon5,
     title: "LISTEN",
-    content: `Lorem ipsum dolor, sit amet`,
+    content: `Compose, Feed`,
   },
   {
     icon: icon6,
     title: "REPORT",
-    content: `Lorem ipsum dolor, sit amet`,
+    content: `Compose, Feed`,
   },
 ];

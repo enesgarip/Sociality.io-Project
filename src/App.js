@@ -13,10 +13,8 @@ import Accordion from "./components/Accordion";
 import { accordionData } from "./utils/MenuContent";
 import notIcon from "./imgs/menuIcon/Icon1.ico";
 import Card from "./components/Card";
-import data from "./utils/data.json";
 
 function App() {
-  const dataJSON = data.posts_by_date;
   return (
     <div className="container">
       <div className="logo">
