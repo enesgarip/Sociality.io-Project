@@ -4,6 +4,8 @@ import noPostImg from "../imgs/no-post-image.png";
 import cancelIcon from "../imgs/actionsIcon/cancel.png";
 import deleteIcon from "../imgs/actionsIcon/delete.png";
 import optionsIcon from "../imgs/actionsIcon/options.png";
+import approveIcon from "../imgs/actionsIcon/approve.png";
+import whiteIcon from "../imgs/actionsIcon/whiteplaceholder.png";
 import faLikesIcon from "../imgs/statsIcon/falikes.png";
 import faCommentsIcon from "../imgs/statsIcon/facomments.png";
 import faSharesIcon from "../imgs/statsIcon/fashares.png";
@@ -145,7 +147,14 @@ const Card = () => {
                         <p className="stat-count">123</p>
                       </div>
                       <div className="card-actions">
-                        <img src={cancelIcon} alt="Actions Icon"></img>
+                        {dataParsed[element][item].status === 0 ? (
+                          <img src={approveIcon} alt="Actions Icon"></img>
+                        ) : dataParsed[element][item].status === 3 ? (
+                          <img src={whiteIcon} alt="Actions Icon"></img>
+                        ) : (
+                          <img src={cancelIcon} alt="Actions Icon"></img>
+                        )}
+
                         <img src={deleteIcon} alt="Actions Icon"></img>
                         <img src={optionsIcon} alt="Actions Icon"></img>
                       </div>
