@@ -75,7 +75,7 @@ ul {
 }
 li {
   padding: 0%;
-  margin: 25%;
+  margin: 5%;
   align-items: center;
 }
 li > img {
@@ -264,4 +264,17 @@ li > img {
 .stat-count {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
+}
+.brandMenu ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.unselectedBrand {
+  opacity: 0.1;
 }
